@@ -546,6 +546,7 @@ MonoBehaviour:
   - {fileID: 3498077903831676299, guid: f3a8273c9d844054bb55c2670936593f, type: 3}
   NPCObjects:
   - {fileID: 69635142049212037, guid: add64d85c6cbf4a44bdd1c8f6e929498, type: 3}
+  - {fileID: 69635142049212037, guid: 9536d2e71bb058343b547829d692c5dc, type: 3}
   hiddenObjects:
   - {fileID: 4898416063866120812, guid: 9181329355a8fc345b307d9d4117b31b, type: 3}
   - {fileID: 4898416063866120812, guid: a08b8d14d3e0dfc42985425a02154739, type: 3}

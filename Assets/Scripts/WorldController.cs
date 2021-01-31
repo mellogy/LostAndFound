@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class WorldController : MonoBehaviour
 {
@@ -37,7 +38,7 @@ public class WorldController : MonoBehaviour
 
         if (objCount == 0 )
         {
-            print("You win!!");
+            SceneManager.LoadScene(sceneName: "Win");
         }
 
     }
