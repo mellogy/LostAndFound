@@ -36,5 +36,17 @@ public class Room : MonoBehaviour
             GameObject toSpawn = ambientObjects[Random.Range(0, ambientObjects.Length)];
             Instantiate(toSpawn, child.position, Quaternion.identity);
         }
+
+        foreach (Transform child in hidingSpawnPoints)
+        {
+            GameObject toSpawn = hidingSpots[Random.Range(0, hidingSpots.Length)];
+            Instantiate(toSpawn, child.position, Quaternion.identity);
+        }
+
+        foreach (Transform child in npcSpawnPoints)
+        {
+            GameObject toSpawn = NPCObjects[Random.Range(0, NPCObjects.Length)];
+            Instantiate(toSpawn, child.position, Quaternion.identity);
+        }
     }
 }

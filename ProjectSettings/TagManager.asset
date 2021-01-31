@@ -11,6 +11,7 @@ TagManager:
   - AmbientSpawn
   - HidingSpawn
   - NPCSpawn
+  - LostItem
   layers:
   - Default
   - TransparentFX

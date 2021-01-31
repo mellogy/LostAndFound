@@ -1,13 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class WorldController : MonoBehaviour
 {
-    
+
+    [SerializeField]
+    private TextMeshProUGUI objLeftText;
+    [SerializeField]
+    private TextMeshProUGUI timeSpentText;
+
     private List<GameObject> toLayer = new List<GameObject>();
     private GameObject player;
     private int updateInterval = 10;
+    private float timer;
+    private int objCount;
 
     void Start()
     {
@@ -23,6 +31,15 @@ public class WorldController : MonoBehaviour
             getLayeredObjects();
         }
         updateLayeredSprites();
+
+        objCount = GameObject.FindGameObjectsWithTag("LostItem").Length;
+        timer += Time.deltaTime;
+
+        if (objCount == 0 )
+        {
+            print("You win!!");
+        }
+
     }
 
     void getLayeredObjects()
@@ -56,5 +73,17 @@ public class WorldController : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void OnGUI()
+    {
+        float minutes = Mathf.Floor(timer / 60);
+        float seconds = timer % 60;
+
+        string niceTime = string.Format("{0:0}:{1:00}", minutes, seconds);
+
+        timeSpentText.text = string.Concat("Time: ", niceTime);
+        objLeftText.text = string.Concat("Lost Objects Left: ", objCount.ToString());
+
     }
 }

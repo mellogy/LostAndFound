@@ -20,6 +20,8 @@ public class WorldGenerator : MonoBehaviour
     private GameObject[] hidingSpots;
     [SerializeField]
     private GameObject[] NPCObjects;
+    [SerializeField]
+    private GameObject[] hiddenObjects;
 
     void Start()
     {
@@ -30,9 +32,29 @@ public class WorldGenerator : MonoBehaviour
                 GameObject roomToSpawn = roomTemplates[Random.Range(0, roomTemplates.Length)];
                 Room newRoom = Instantiate(roomToSpawn, new Vector3(x * roomWidth, y * roomHeight, 0), Quaternion.identity).GetComponent<Room>();
                 newRoom.ambientObjects = ambientObjects;
-                newRoom.hidingSpots = hidingSpots;
-                newRoom.NPCObjects = NPCObjects;
             }
+        }
+
+        foreach (GameObject obj in hiddenObjects) {
+            int rndX = Random.Range(-(worldWidth / 2 * roomWidth), worldWidth / 2 * roomWidth);
+            int rndY = Random.Range(-(worldHeight / 2 * roomHeight), worldHeight / 2 * roomHeight);
+            GameObject NPC = Instantiate(
+                NPCObjects[Random.Range(0, NPCObjects.Length)],
+                new Vector3(rndX, rndY, 0),
+                Quaternion.identity
+                );
+
+            rndX = Random.Range(-(worldWidth / 2 * roomWidth), worldWidth / 2 * roomWidth);
+            rndY = Random.Range(-(worldHeight / 2 * roomHeight), worldHeight / 2 * roomHeight);
+
+            GameObject hiddenObject = Instantiate(
+                obj,
+                new Vector3(rndX, rndY, 0),
+                Quaternion.identity
+                );
+
+            NPC.GetComponent<NPCController>().myObject = hiddenObject;
+            hiddenObject.GetComponent<LostItem>().owner = NPC;
         }
     }
 }
