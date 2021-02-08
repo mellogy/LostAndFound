@@ -490,7 +490,7 @@ SpriteMask:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1fe915ea0d5e99a4cb582a09174b23e2, type: 3}
-  m_MaskAlphaCutoff: 0
+  m_MaskAlphaCutoff: 1
   m_FrontSortingLayerID: 0
   m_BackSortingLayerID: 0
   m_FrontSortingLayer: 0
@@ -544,6 +544,8 @@ MonoBehaviour:
   - {fileID: 8727050636221630995, guid: 941bdf67cc5d8034cbf83776e43ea56b, type: 3}
   hidingSpots:
   - {fileID: 3498077903831676299, guid: f3a8273c9d844054bb55c2670936593f, type: 3}
+  - {fileID: 3498077903831676299, guid: cfc1f719d62646547a7f33cf91f157ea, type: 3}
+  - {fileID: 3498077903831676299, guid: 53000259a5e81284290c2a9a5763bf50, type: 3}
   NPCObjects:
   - {fileID: 69635142049212037, guid: add64d85c6cbf4a44bdd1c8f6e929498, type: 3}
   - {fileID: 69635142049212037, guid: 9536d2e71bb058343b547829d692c5dc, type: 3}
@@ -553,6 +555,8 @@ MonoBehaviour:
   - {fileID: 4898416063866120812, guid: 844b87d96b7447241b88c32d6c04ff4f, type: 3}
   - {fileID: 4898416063866120812, guid: 5cbd79933948aa54494dbb6c78381fc3, type: 3}
   - {fileID: 4898416063866120812, guid: dfdc5b2d5e5e827488dcad43ce65193e, type: 3}
+  worldBorder: {fileID: 7030767927574563485, guid: eefe8e97fccff704faa6a54d49b222e1,
+    type: 3}
 --- !u!4 &678241186
 Transform:
   m_ObjectHideFlags: 0
@@ -746,7 +750,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 50
   m_Sprite: {fileID: 21300000, guid: 5c0e76d6e00b8fc478a35999a8b77d42, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

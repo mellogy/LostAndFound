@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 7093571711981838406}
   - component: {fileID: 7841613683504699877}
   m_Layer: 0
-  m_Name: HidingSpot1
+  m_Name: HidingSpot2
   m_TagString: HidingPlace
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,7 +107,7 @@ Transform:
   m_GameObject: {fileID: 3498077903831676299}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 4734179271670643256}
   m_Father: {fileID: 0}
@@ -152,7 +152,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -194818066077126744, guid: c66c9e9a67659de43af94ab0aff83b61,
+  m_Sprite: {fileID: 7702638131693110658, guid: c66c9e9a67659de43af94ab0aff83b61,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

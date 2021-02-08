@@ -19,34 +19,15 @@ public class Room : MonoBehaviour
             {
                 ambientSpawnPoints.Add(child);
             }
-
-            if (child.tag == "HidingSpawn")
-            {
-                hidingSpawnPoints.Add(child);
-            }
-
-            if (child.tag == "NPCSpawn")
-            {
-                npcSpawnPoints.Add(child);
-            }
         }
 
         foreach (Transform child in ambientSpawnPoints)
         {
             GameObject toSpawn = ambientObjects[Random.Range(0, ambientObjects.Length)];
-            Instantiate(toSpawn, child.position, Quaternion.identity);
-        }
-
-        foreach (Transform child in hidingSpawnPoints)
-        {
-            GameObject toSpawn = hidingSpots[Random.Range(0, hidingSpots.Length)];
-            Instantiate(toSpawn, child.position, Quaternion.identity);
-        }
-
-        foreach (Transform child in npcSpawnPoints)
-        {
-            GameObject toSpawn = NPCObjects[Random.Range(0, NPCObjects.Length)];
-            Instantiate(toSpawn, child.position, Quaternion.identity);
+            if (!Physics2D.OverlapCircle(child.position, 1f))
+            {
+                Instantiate(toSpawn, child.position, Quaternion.identity);
+            }
         }
     }
 }

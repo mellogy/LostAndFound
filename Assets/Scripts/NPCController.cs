@@ -36,6 +36,7 @@ public class NPCController : MonoBehaviour
     private BoxCollider2D interactBox;
     private bool objectFound = false;
     private string phrase;
+    public bool hasTalked = false;
 
     // Start is called before the first frame update
     void Start()
@@ -62,6 +63,7 @@ public class NPCController : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            hasTalked = true;
             GameObject playerCarry = collision.gameObject.GetComponent<PlayerController>().carrying;
             if (playerCarry)
             {

@@ -41,11 +41,15 @@ public class PlayerController : MonoBehaviour
 
         if (carrying)
         {
-            arrow.SetActive(true);
             LostItem item = carrying.GetComponent<LostItem>();
             Vector3 target = item.owner.transform.position;
             Vector3 currentPos = transform.position;
-            //target = new Vector3(target.x - currentPos.x, target.y - currentPos.y, 0f);
+
+            NPCController owner = item.owner.GetComponent<NPCController>();
+            if (owner.hasTalked)
+            {
+                arrow.SetActive(true);
+            }
 
             target.z = 0f;
             target.x = target.x - currentPos.x;
